@@ -18,6 +18,7 @@ function getGithubCredentials() {
 
 export const authOptions : NextAuthOptions = {
     adapter: UpstashRedisAdapter(db),
+    secret:process.env.NEXT_AUTH_SECRET,
     session: {
         strategy:'jwt'
     },
